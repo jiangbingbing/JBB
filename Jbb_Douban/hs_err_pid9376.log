@@ -1,0 +1,236 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d2eb554, pid=9376, tid=9608
+#
+# JRE version: 6.0_24-b07
+# Java VM: Java HotSpot(TM) Client VM (19.1-b02 mixed mode windows-x86 )
+# Problematic frame:
+# C  [fontmanager.dll+0xb554]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x016b9000):  JavaThread "main" [_thread_in_native, id=9608, stack(0x00130000,0x00180000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x0000705a
+
+Registers:
+EAX=0x00002718, EBX=0x00000000, ECX=0x0000705a, EDX=0x03aef018
+ESP=0x0017f3c8, EBP=0x0017f3d4, ESI=0x0017f3f4, EDI=0x016b9118
+EIP=0x6d2eb554, EFLAGS=0x00010206
+
+Register to memory mapping:
+
+EAX=0x00002718
+0x00002718 is pointing to unknown location
+
+EBX=0x00000000
+0x00000000 is pointing to unknown location
+
+ECX=0x0000705a
+0x0000705a is pointing to unknown location
+
+EDX=0x03aef018
+0x03aef018 is pointing to unknown location
+
+ESP=0x0017f3c8
+0x0017f3c8 is pointing into the stack for thread: 0x016b9000
+"main" prio=6 tid=0x016b9000 nid=0x2588 runnable [0x0017f000]
+   java.lang.Thread.State: RUNNABLE
+
+EBP=0x0017f3d4
+0x0017f3d4 is pointing into the stack for thread: 0x016b9000
+"main" prio=6 tid=0x016b9000 nid=0x2588 runnable [0x0017f000]
+   java.lang.Thread.State: RUNNABLE
+
+ESI=0x0017f3f4
+0x0017f3f4 is pointing into the stack for thread: 0x016b9000
+"main" prio=6 tid=0x016b9000 nid=0x2588 runnable [0x0017f000]
+   java.lang.Thread.State: RUNNABLE
+
+EDI=0x016b9118
+0x016b9118 is pointing to unknown location
+
+
+Top of Stack: (sp=0x0017f3c8)
+0x0017f3c8:   33b634a0 00000000 33af61a0 00000000
+0x0017f3d8:   0000e0b4 7c38b398 0000e0b4 0000705a
+0x0017f3e8:   7c38b528 0017f3f8 7c34214f 7c38b280
+0x0017f3f8:   0017f440 7c34f65c 00000012 7c34f7a0
+0x0017f408:   7c38b528 7c34f797 0000e0b4 03aef008
+0x0017f418:   0000705a 0000001b 7c38b528 7c366efc
+0x0017f428:   0000e0b4 0017fdd4 03aef018 00000001
+0x0017f438:   0017f428 ffffffff 0017fdd4 7c34240d 
+
+Instructions: (pc=0x6d2eb554)
+0x6d2eb544:   c0 10 53 50 e8 c5 3d 02 00 3b c3 59 59 8b 4d 10
+0x6d2eb554:   89 01 0f 85 f5 00 00 00 8b 7d 08 68 d4 04 00 00 
+
+
+Stack: [0x00130000,0x00180000],  sp=0x0017f3c8,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [fontmanager.dll+0xb554]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.font.FileFont.getFontMetrics(J)Lsun/font/StrikeMetrics;+0
+j  sun.font.FileFontStrike.getFontMetrics()Lsun/font/StrikeMetrics;+16
+j  sun.font.CompositeStrike.getFontMetrics()Lsun/font/StrikeMetrics;+34
+j  sun.font.FontDesignMetrics.initMatrixAndMetrics()V+28
+j  sun.font.FontDesignMetrics.<init>(Ljava/awt/Font;Ljava/awt/font/FontRenderContext;)V+62
+j  sun.font.FontDesignMetrics.getMetrics(Ljava/awt/Font;Ljava/awt/font/FontRenderContext;)Lsun/font/FontDesignMetrics;+141
+j  sun.swing.SwingUtilities2.getFontMetrics(Ljavax/swing/JComponent;Ljava/awt/Font;)Ljava/awt/FontMetrics;+15
+j  javax.swing.JComponent.getFontMetrics(Ljava/awt/Font;)Ljava/awt/FontMetrics;+2
+j  javax.swing.plaf.basic.BasicLabelUI.getPreferredSize(Ljavax/swing/JComponent;)Ljava/awt/Dimension;+144
+j  javax.swing.JComponent.getPreferredSize()Ljava/awt/Dimension;+26
+j  javax.swing.plaf.basic.BasicComboBoxRenderer.getPreferredSize()Ljava/awt/Dimension;+40
+j  javax.swing.plaf.basic.BasicListUI.updateLayoutState()V+162
+j  javax.swing.plaf.basic.BasicListUI.maybeUpdateLayoutState()V+8
+j  javax.swing.plaf.basic.BasicListUI$Handler.valueChanged(Ljavax/swing/event/ListSelectionEvent;)V+4
+j  javax.swing.DefaultListSelectionModel.fireValueChanged(IIZ)V+65
+j  javax.swing.DefaultListSelectionModel.fireValueChanged(II)V+7
+j  javax.swing.DefaultListSelectionModel.fireValueChanged()V+70
+j  javax.swing.DefaultListSelectionModel.changeSelection(IIIIZ)V+92
+j  javax.swing.DefaultListSelectionModel.changeSelection(IIII)V+7
+j  javax.swing.DefaultListSelectionModel.setSelectionInterval(II)V+59
+j  javax.swing.JList.setSelectedIndex(I)V+20
+j  javax.swing.plaf.basic.BasicComboPopup.setListSelection(I)V+20
+j  javax.swing.plaf.basic.BasicComboPopup.access$300(Ljavax/swing/plaf/basic/BasicComboPopup;I)V+2
+j  javax.swing.plaf.basic.BasicComboPopup$Handler.itemStateChanged(Ljava/awt/event/ItemEvent;)V+24
+j  javax.swing.JComboBox.fireItemStateChanged(Ljava/awt/event/ItemEvent;)V+35
+j  javax.swing.JComboBox.selectedItemChanged()V+64
+j  javax.swing.JComboBox.contentsChanged(Ljavax/swing/event/ListDataEvent;)V+28
+j  javax.swing.AbstractListModel.fireContentsChanged(Ljava/lang/Object;II)V+65
+j  javax.swing.DefaultComboBoxModel.setSelectedItem(Ljava/lang/Object;)V+38
+j  javax.swing.DefaultComboBoxModel.addElement(Ljava/lang/Object;)V+55
+j  javax.swing.JComboBox.addItem(Ljava/lang/Object;)V+12
+j  douban.frame.MainFrame.init()V+28
+j  douban.frame.MainFrame.<init>()V+50
+j  douban.main.Main.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x03b58400 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=10040, stack(0x04670000,0x046c0000)]
+  0x03af2000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=10192, stack(0x03dd0000,0x03e20000)]
+  0x03af1c00 JavaThread "AWT-Shutdown" [_thread_blocked, id=10188, stack(0x03d40000,0x03d90000)]
+  0x03ab9400 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=10176, stack(0x03cf0000,0x03d40000)]
+  0x01785800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=6224, stack(0x03a00000,0x03a50000)]
+  0x0175c000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=8980, stack(0x039b0000,0x03a00000)]
+  0x0175b000 JavaThread "Attach Listener" daemon [_thread_blocked, id=8640, stack(0x03960000,0x039b0000)]
+  0x01757c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=10120, stack(0x03910000,0x03960000)]
+  0x0174f800 JavaThread "Finalizer" daemon [_thread_blocked, id=8804, stack(0x038c0000,0x03910000)]
+  0x0174ac00 JavaThread "Reference Handler" daemon [_thread_blocked, id=9696, stack(0x03870000,0x038c0000)]
+=>0x016b9000 JavaThread "main" [_thread_in_native, id=9608, stack(0x00130000,0x00180000)]
+
+Other Threads:
+  0x01746c00 VMThread [stack: 0x03820000,0x03870000] [id=8564]
+  0x0179f800 WatcherThread [stack: 0x03a50000,0x03aa0000] [id=9388]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 2014K [0x23af0000, 0x24040000, 0x29040000)
+  eden space 4416K,  45% used [0x23af0000, 0x23ce7a98, 0x23f40000)
+  from space 512K,   0% used [0x23f40000, 0x23f40000, 0x23fc0000)
+  to   space 512K,   0% used [0x23fc0000, 0x23fc0000, 0x24040000)
+ tenured generation   total 10944K, used 0K [0x29040000, 0x29af0000, 0x33af0000)
+   the space 10944K,   0% used [0x29040000, 0x29040000, 0x29040200, 0x29af0000)
+ compacting perm gen  total 12288K, used 7461K [0x33af0000, 0x346f0000, 0x37af0000)
+   the space 12288K,  60% used [0x33af0000, 0x34239528, 0x34239600, 0x346f0000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files\Java\jdk1.6.0_24\bin\javaw.exe
+0x77be0000 - 0x77d1c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x76e90000 - 0x76f64000 	C:\Windows\system32\kernel32.dll
+0x75bd0000 - 0x75c1b000 	C:\Windows\system32\KERNELBASE.dll
+0x76d10000 - 0x76db0000 	C:\Windows\system32\ADVAPI32.dll
+0x77390000 - 0x7743c000 	C:\Windows\system32\msvcrt.dll
+0x77350000 - 0x77369000 	C:\Windows\SYSTEM32\sechost.dll
+0x77d60000 - 0x77e01000 	C:\Windows\system32\RPCRT4.dll
+0x77280000 - 0x77349000 	C:\Windows\system32\USER32.dll
+0x769d0000 - 0x76a1e000 	C:\Windows\system32\GDI32.dll
+0x77030000 - 0x7703a000 	C:\Windows\system32\LPK.dll
+0x770e0000 - 0x7717d000 	C:\Windows\system32\USP10.dll
+0x77370000 - 0x7738f000 	C:\Windows\system32\IMM32.DLL
+0x77640000 - 0x7770c000 	C:\Windows\system32\MSCTF.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\msvcr71.dll
+0x6d8a0000 - 0x6db46000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\client\jvm.dll
+0x75c50000 - 0x75c82000 	C:\Windows\system32\WINMM.dll
+0x75910000 - 0x7595b000 	C:\Windows\system32\apphelp.dll
+0x6d850000 - 0x6d85c000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\verify.dll
+0x6d3d0000 - 0x6d3ef000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\java.dll
+0x6d330000 - 0x6d338000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\hpi.dll
+0x77d20000 - 0x77d25000 	C:\Windows\system32\PSAPI.DLL
+0x6d890000 - 0x6d89f000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\zip.dll
+0x6d0b0000 - 0x6d1fa000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\awt.dll
+0x72820000 - 0x72871000 	C:\Windows\system32\WINSPOOL.DRV
+0x77940000 - 0x77a9c000 	C:\Windows\system32\ole32.dll
+0x746b0000 - 0x7484e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.20787_none_2b43b51e45274037\COMCTL32.dll
+0x76e30000 - 0x76e87000 	C:\Windows\system32\SHLWAPI.dll
+0x75c90000 - 0x75ca3000 	C:\Windows\system32\DWMAPI.DLL
+0x74b20000 - 0x74b60000 	C:\Windows\system32\uxtheme.dll
+0x6d2e0000 - 0x6d32f000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\fontmanager.dll
+0x6d6b0000 - 0x6d6c3000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\net.dll
+0x76f70000 - 0x76fa5000 	C:\Windows\system32\WS2_32.dll
+0x77040000 - 0x77046000 	C:\Windows\system32\NSI.dll
+0x75450000 - 0x7548c000 	C:\Windows\system32\mswsock.dll
+0x75440000 - 0x75446000 	C:\Windows\System32\wship6.dll
+0x6d6d0000 - 0x6d6d9000 	C:\Program Files\Java\jdk1.6.0_24\jre\bin\nio.dll
+0x6c280000 - 0x6c35e000 	D:\ProgramFilesOnWin7\360\360Safe\safemon\safemon.dll
+0x75d80000 - 0x769c9000 	C:\Windows\system32\SHELL32.dll
+0x76c70000 - 0x76cff000 	C:\Windows\system32\OLEAUT32.dll
+0x74f60000 - 0x74f69000 	C:\Windows\system32\VERSION.dll
+0x77180000 - 0x77275000 	C:\Windows\system32\WININET.dll
+0x77800000 - 0x77936000 	C:\Windows\system32\urlmon.dll
+0x75ab0000 - 0x75bcc000 	C:\Windows\system32\CRYPT32.dll
+0x75a50000 - 0x75a5c000 	C:\Windows\system32\MSASN1.dll
+0x76a20000 - 0x76c1d000 	C:\Windows\system32\iertutil.dll
+0x10000000 - 0x102f7000 	C:\Windows\system32\QQPINYIN.IME
+0x74fe0000 - 0x74fed000 	C:\Windows\system32\WTSAPI32.dll
+0x73be0000 - 0x73be5000 	C:\Windows\system32\MSIMG32.dll
+0x73e30000 - 0x73e41000 	C:\Windows\system32\NETAPI32.dll
+0x73e20000 - 0x73e29000 	C:\Windows\system32\netutils.dll
+0x75650000 - 0x75669000 	C:\Windows\system32\srvcli.dll
+0x73e10000 - 0x73e1f000 	C:\Windows\system32\wkscli.dll
+0x759e0000 - 0x759eb000 	C:\Windows\system32\profapi.dll
+0x750e0000 - 0x75109000 	C:\Windows\system32\WINSTA.dll
+0x75960000 - 0x7596c000 	C:\Windows\system32\CRYPTBASE.dll
+0x77050000 - 0x770d3000 	C:\Windows\system32\CLBCatQ.DLL
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK 
+java_command: douban.main.Main
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=C:\Program Files\Java\jre6\lib\rt.jar;.
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\MySQL\MySQL Server 5.0\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\Java\jdk1.6.0_24\bin;
+USERNAME=limingyao375
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2091636k(327260k free), swap 6284916k(2476k free)
+
+vm_info: Java HotSpot(TM) Client VM (19.1-b02) for windows-x86 JRE (1.6.0_24-b07), built on Feb  2 2011 17:44:41 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Fri Jan 04 16:24:23 2013
+elapsed time: 2 seconds
+
